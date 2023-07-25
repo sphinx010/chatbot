@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SassyChatBot</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="ChatBot.js" defer></script>
+</head>
+<body>
+    <h1 style="font-size: 1em; text-align: center; font-family: 'Luckiest Guy', cursive; font-weight: normal;" id="typing-text"> </h1>
+    <form action="" id="convo">
+        <h2 style="font-size: 1em; position: absolute; top: 0%; font-weight: lighter; text-align: center;">Right now, i am still only able to provide feedbacks on trends such as; the weather, sports or fashion.
+        </h2>
+        <div class="promptbox">
+            <label for="promt">trend:</label>
+            <input type="text" name="user-input" id="promt" autocomplete="off">
+        </div>
+        <div class="response">
+            <label for="outputs">feedback:</label>
+            <input type="text" id="outputs" readonly class="output">
+        </div>
+        <div class="controls">
+            <button class="but1" id="generate-btn"><p>Ask</p></button class="but2"><button><p>reset</p></button>
+        </div>
+    </form>
+</body>
+</html>

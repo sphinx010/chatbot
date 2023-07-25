@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Luckiest+Guy&display=swap');
+body{
+    width:500px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: #000000bf;
+    margin: 70px auto;
+    outline: rgb(255, 0, 0) solid 1px;
+    border-radius: 3px;
+    background-image: url(/imgs/nathan-watson-G8APm-Q8zHQ-unsplash.jpg);
+    background-size:  500px 70vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fffffe;
+    backdrop-filter: brightness(90%) blur(2px);
+}
+#convo{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+    outline: #ede5ff37 solid 2px;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    border-radius: 3px;
+    backdrop-filter: brightness(50%);
+    gap: 1em;
+}
+
+#promt{
+    border: 1px solid black;
+    width: 90px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #000000a3;
+    color: color-mix(in srgb, #a3103c 50%, rgb(255, 80, 45) 50%);
+    font-weight: lighter;
+}
+
+#promt:focus{
+    outline: 1px rgba(255, 0, 0, 0.441) solid;   
+}
+.output{
+    border: 1px solid rgba(55, 55, 55, 0.589);
+    width: 400px;
+    border-radius: 2px;
+    background-color: #000000a3;
+    color: #ffffff;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: break-spaces;
+    height: 50px;
+    font-size: 10px;
+}
+button{
+    color: white;
+    background-color: black;
+    border: #a3103c 1px solid;
+    border-radius: 3px;
+    font-size: 9px;
+    width: 60px;
+    margin: 7px;
+}
