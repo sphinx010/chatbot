@@ -1,3 +1,4 @@
+//object from which the response is fetched
 const response = {
   'weather': ['funny weather today! Quite cloudy..Good news is; rain is not falling.', 'Dude it is so gonna rain ..be sure to get an umbrella!', 'fret not brother..it is only the windy and nothing crazy like a tsunami or something', 'Get your self some SPF cus this sun is on puberty!', 'you should totes stay indoors today chad cus this hurricane is bad news'],
   'sports': ["Go eagles! we're onto the next one", "L...grow some cojones and DYR!!", "Talk about those Losers..they totally Flunked this one", "Hey you're in for some Action cus it's Gators vs Raptures  whooo hooo!",  "Spain vs Italy...and another bites the dust Italy 3 Spain 1! "],
@@ -13,7 +14,6 @@ const prompts = [
 
 const inputField = document.getElementById('promt');
 const outPuts = document.getElementById('outputs');
-let previousPrompt = ' ';
 
 
 function sassyChatBot(event) {
@@ -48,10 +48,10 @@ document.getElementById('generate-btn').addEventListener('click', () =>{
 // Text to be displayed
 const textToType = "Hi, i'm C2 (Your ChatBot) i can be either friendly or cruel sometimes, so keep ya head up soldier!";
 
-// Delay between each character (in milliseconds)
+// Delay between each character 
 const delay = 100;
 
-// Get the div element to display the typing text
+// Get the h1 element to display the typing text
 const typingTextElement = document.getElementById("typing-text");
 
 // Function to display the text with typing effect
