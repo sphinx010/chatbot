@@ -16,6 +16,7 @@ const inputField = document.getElementById('promt');
 const outPuts = document.getElementById('outputs');
 
 
+//Junk code, kept as reference 
 function sassyChatBot(event) {
   event.preventDefault();
   const input = inputField.value
@@ -25,25 +26,52 @@ function sassyChatBot(event) {
   } else {
     outPuts.value = "Looks like you're out of line, brodie. Try weather, sports, or fashion";
   }
- 
 }
 
-document.getElementById('generate-btn').addEventListener('click', sassyChatBot);
 
 
-const pace = 100;
+let typing = false; // Flag variable to track if typing animation is in progress
 
-function textToTry(text, index){
-if(index < text.length){
-  setTimeout(() =>{
-    textToType.textContent += text.charAt(index);
-    textToTry(text, index + 1);
-  }, pace);
+function typeText(text) {
+  return new Promise((resolve) => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        outPuts.value += text.charAt(index);
+        index++;
+      } else {
+        clearInterval(interval);
+        resolve();
+      }
+    }, 80); 
+  });
 }
-}
-document.getElementById('generate-btn').addEventListener('click', () =>{
-  textToTry(outPuts.value, 0)
+
+
+
+document.getElementById('generate-btn').addEventListener('click', async (event) => {
+  event.preventDefault();
+  const input = inputField.value;
+
+  if (!typing) { // Checks if the typing animation is not still typing
+    typing = true; // Sets typing to true to prevent multiple clicks
+    
+    outPuts.value = ""; // then clears the output field
+    
+    if (prompts.includes(input) && response.hasOwnProperty(input)) {//checks to make sure user input matches the obj prop and the resource arr
+      const randomizer = Math.floor(Math.random() * response[input].length);
+      const currentResponse = response[input][randomizer];
+      
+      await typeText(currentResponse); // Type the current response
+    } else {
+      outPuts.value = "Looks like you're out of line, brodie. Try weather, sports, or fashion";
+    }
+
+    typing = false; // Set typing back to false to allow the next click event
+  }
 });
+
+
 
 // Text to be displayed
 const textToType = "Hi, i'm C2 (Your ChatBot) i can be either friendly or cruel sometimes, so keep ya head up soldier!";
@@ -51,13 +79,13 @@ const textToType = "Hi, i'm C2 (Your ChatBot) i can be either friendly or cruel 
 // Delay between each character 
 const delay = 100;
 
-// Get the h1 element to display the typing text
+// Got the h1 element to display the typing text
 const typingTextElement = document.getElementById("typing-text");
 
 // Function to display the text with typing effect
 function displayTextWithTypingEffect(text, index) {
   if (index < text.length) {
-    // Add the next character to the typing text with delay
+    // Adds the next character to the typing text with delay
     setTimeout(() => {
       typingTextElement.textContent += text.charAt(index);
       displayTextWithTypingEffect(text, index + 1);
@@ -69,6 +97,3 @@ function displayTextWithTypingEffect(text, index) {
 document.addEventListener("DOMContentLoaded", () => {
   displayTextWithTypingEffect(textToType, 0);
 });
-
-    
-    
