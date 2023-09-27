@@ -1,9 +1,16 @@
+//chatbot code ;)
+
 //object from which the response is fetched
 const response = {
-  'weather': ['funny weather today! Quite cloudy..Good news is; rain is not falling.', 'Dude it is so gonna rain ..be sure to get an umbrella!', 'fret not brother..it is only the windy and nothing crazy like a tsunami or something', 'Get your self some SPF cus this sun is on puberty!', 'you should totes stay indoors today chad cus this hurricane is bad news'],
-  'sports': ["Go eagles! we're onto the next one", "L...grow some cojones and DYR!!", "Talk about those Losers..they totally Flunked this one", "Hey you're in for some Action cus it's Gators vs Raptures  whooo hooo!",  "Spain vs Italy...and another bites the dust Italy 3 Spain 1! "],
+  'weather': ['funny weather today! Quite cloudy..Good news is; rain is not falling.', 'Dude it is so gonna rain ..be sure to get an umbrella!', 'fret not brother..it is only windy and nothing crazy like a tsunami or something', 'Get your self some SPF cus this sun is on puberty!', 'you should totally stay indoors today because this hurricane is bad news','quite the weather we have; cloudy and windy'],
+  'sports': ["Go eagles! we're onto the next one", "L...grow some cojones and DYR!!", "Talk about those Losers..they totally Flunked this one", "Hey you're in for some Action cus it's Gators vs Raptors  whooo hooo!",  "Spain vs Italy...and another bites the dust Italy 3 Spain 1! ","Did you know that the first ever game of Basketball was played with a football?"],
   'fashion': ["Heh..what does a nerd like you need with Fashion", "hey i like any Jordans can't go wrong with a pair", "Nikes are hot in sale..try pulling a night shift and maybe you could afford one"]
 };
+
+
+
+
+
 
 const prompts = [
   'weather', 
@@ -12,8 +19,12 @@ const prompts = [
 ];
 
 
+
+
 const inputField = document.getElementById('promt');
 const outPuts = document.getElementById('outputs');
+
+
 
 
 //Junk code, kept as reference 
@@ -30,6 +41,7 @@ function sassyChatBot(event) {
 
 
 
+
 let typing = false; // Flag variable to track if typing animation is in progress
 
 function typeText(text) {
@@ -43,7 +55,7 @@ function typeText(text) {
         clearInterval(interval);
         resolve();
       }
-    }, 80); 
+    }, 50); 
   });
 }
 
@@ -73,14 +85,18 @@ document.getElementById('generate-btn').addEventListener('click', async (event) 
 
 
 
+
+
 // Text to be displayed
-const textToType = "Hi, i'm C2 (Your ChatBot) i can be either friendly or cruel sometimes, so keep ya head up soldier!";
+const textToType = "Hi, i'm C2 (Your ChatBot) and i'm here to assist you...ah..nice rhyme :)";
 
 // Delay between each character 
-const delay = 100;
+const delay = 80;
 
 // Got the h1 element to display the typing text
 const typingTextElement = document.getElementById("typing-text");
+
+
 
 // Function to display the text with typing effect
 function displayTextWithTypingEffect(text, index) {
@@ -93,7 +109,26 @@ function displayTextWithTypingEffect(text, index) {
   }
 }
 
+
+
 // Start the typing effect when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   displayTextWithTypingEffect(textToType, 0);
 });
+
+
+
+const button = document.querySelector('.but1'); 
+
+button.addEventListener('keydown', () => {
+  // Change display of :before pseudo-element
+  const styleSheet = document.styleSheets[0]; // Assuming it's the first stylesheet
+  for (let i = 0; i < styleSheet.cssRules.length; i++) {
+    const rule = styleSheet.cssRules[i];
+    if (rule.selectorText === '.but1:before') {
+      rule.style.display = 'none';
+      break; // Exit the loop when the rule is found
+    }
+  }
+});
+
