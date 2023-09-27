@@ -122,7 +122,7 @@ const button = document.querySelector('.but1');
 
 button.addEventListener('keydown', () => {
   // Change display of :before pseudo-element
-  const styleSheet = document.styleSheets[0]; // Assuming it's the first stylesheet
+  const styleSheet = document.styleSheets[0];
   for (let i = 0; i < styleSheet.cssRules.length; i++) {
     const rule = styleSheet.cssRules[i];
     if (rule.selectorText === '.but1:before') {
